@@ -6,7 +6,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .bash_aliases .tmux.conf"
+files=".bashrc .inputrc .bash_aliases .tmux.conf"
 
 
 # create dotfiles_old in homedir
