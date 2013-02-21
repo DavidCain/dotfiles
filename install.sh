@@ -4,7 +4,7 @@
 #
 # Installs all the dotfiles (modeled after Michael J. Smalley's script)
 
-dir=~/dotfiles                    # dotfiles directory
+dir=~/Documents/dotfiles          # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files=".bashrc .inputrc .bash_aliases .tmux.conf"
 
