@@ -21,3 +21,5 @@ alias gimme='sudo apt-get install'
 alias supercp='rsync --rsh='ssh' -av --progress --partial' # (source, dest)
 
 alias dj='cd $MIT/Antibody/djweb/antibodyweb'
+
+alias mksl='pandoc -t beamer -s slides.md -V theme:Warsaw -o pres.pdf'
