@@ -8,12 +8,6 @@ alias cse='cd $MIT/Antibody/antibody/cse'
 
 alias clc="clear; echo This ain\'t MATLAB, buddeh"
 
-# Classes
-alias bio='cd $DROPBOX/Documents/CS441'
-alias dev='cd $DROPBOX/Documents/EC335'
-alias auc='cd $DROPBOX/Documents/Auctions'
-alias lab='cd $DROPBOX/Documents/EC355'
-
 alias today='vim `date --iso-8601`.md'
 alias day='today'
 
