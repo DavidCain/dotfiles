@@ -1,4 +1,6 @@
 export DROPBOX='/home/david/Desktop/Dropbox'
+export LEDGER_FILE='/home/david/Desktop/Dropbox/finance/david.gnucash'
+
 export MIT='/home/david/Desktop/Dropbox/MIT'
 alias resume='cd $DROPBOX/Documents/Resume'
 alias mit='cd $MIT'
