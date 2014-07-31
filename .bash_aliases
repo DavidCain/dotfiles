@@ -20,6 +20,12 @@ alias dj='cd $MIT/djweb/'
 
 alias mksl='pandoc -t beamer -s slides.md -V theme:Warsaw -o pres.pdf'
 
+function ocr {
+    convert $1 ocr_img.tiff
+    tesseract ocr_img.tiff ocr_output
+    rm -f ocr_img.tiff
+}
+
 function pygrep {
     find . -name '*.py' -exec grep -H --color=always "$1" "{}" \;
 }
