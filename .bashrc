@@ -115,3 +115,6 @@ if ! shopt -oq posix; then
 fi
 
 set -o vi
+
+
+export PATH=$PATH:$HOME/android-sdk/sdk/tools:$HOME/android-sdk/sdk/platform-tools:$JAVA_HOME/bin
