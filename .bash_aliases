@@ -19,3 +19,8 @@ alias supercp='rsync --rsh='ssh' -av --progress --partial' # (source, dest)
 alias dj='cd $MIT/djweb/'
 
 alias mksl='pandoc -t beamer -s slides.md -V theme:Warsaw -o pres.pdf'
+
+function pygrep {
+    find . -name '*.py' -exec grep -H --color=always "$1" "{}" \;
+}
+alias pyinst='python setup.py install --user'
