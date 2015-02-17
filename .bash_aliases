@@ -31,4 +31,7 @@ function ocr {
 function pygrep {
     find . -name '*.py' -exec grep -H --color=always "$1" "{}" \;
 }
+function rbgrep {
+    find . -name '*.rb' -exec grep -H --color=always "$1" "{}" \;
+}
 alias pyinst='python setup.py install --user'
