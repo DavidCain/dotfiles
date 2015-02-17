@@ -95,5 +95,9 @@ fi
 
 set -o vi
 
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
 
 export PATH=$PATH:$HOME/android-sdk/sdk/tools:$HOME/android-sdk/sdk/platform-tools:$JAVA_HOME/bin
