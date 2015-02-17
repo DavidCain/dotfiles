@@ -1,2 +1,2 @@
-C-L: clear-screen
+"\e\C-la" clear-screen
 set editing-mode vi
