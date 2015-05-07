@@ -58,10 +58,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias less='less -R'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=always'
-    alias fgrep='fgrep --color=always'
-    alias egrep='egrep --color=always'
 fi
 
 # some more ls aliases
@@ -99,5 +95,5 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
-
 export PATH=$PATH:$HOME/android-sdk/sdk/tools:$HOME/android-sdk/sdk/platform-tools:$JAVA_HOME/bin
+export GREP_OPTIONS='--color=always'
