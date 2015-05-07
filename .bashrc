@@ -98,4 +98,8 @@ fi
 export PATH=$PATH:$HOME/android-sdk/sdk/tools:$HOME/android-sdk/sdk/platform-tools:$JAVA_HOME/bin
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+if [ -f ~/.private_bashrc ]; then
+    . ~/.private_bashrc
+fi
+
 export GREP_OPTIONS='--color=always'
