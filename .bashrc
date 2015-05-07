@@ -96,4 +96,6 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 export PATH=$PATH:$HOME/android-sdk/sdk/tools:$HOME/android-sdk/sdk/platform-tools:$JAVA_HOME/bin
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 export GREP_OPTIONS='--color=always'
