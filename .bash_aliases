@@ -28,5 +28,7 @@ function rbgrep {
 
 alias pyinst='python setup.py install --user'
 
+alias c='cd $HOME/cloudpercept'
 alias ca='cd $HOME/cloudpercept/app'
+alias cl='cd $HOME/cloudpercept/lib'
 alias be='bundle exec'
