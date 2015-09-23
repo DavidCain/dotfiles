@@ -36,6 +36,7 @@ function cdir {
 
 alias pyinst='python setup.py install --user'
 
+alias fn='find . -name'
 alias c='cd $HOME/cloudpercept'
 alias ca='cd $HOME/cloudpercept/app'
 alias cl='cd $HOME/cloudpercept/lib'
