@@ -26,6 +26,14 @@ function rbgrep {
     find . -name '*.rb' -exec grep -H --color=always "$1" "{}" \;
 }
 
+function cdir {
+    fn=$1
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        fn=${fn#[ab]/}  # Strip Git's leading `a/ or b/`
+    fi
+    cd `dirname "$fn"`
+}
+
 alias pyinst='python setup.py install --user'
 
 alias c='cd $HOME/cloudpercept'
