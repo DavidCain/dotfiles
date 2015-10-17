@@ -44,5 +44,10 @@ alias ca='cd $HOME/cloudpercept/app'
 alias cl='cd $HOME/cloudpercept/lib'
 alias be='bundle exec'
 alias bi='bundle install'
-alias gg='git grep'
+alias bu='bundle update'
+alias gg='git g'
+
+alias gcd='cd "$(git root)"'
+
+alias dn='dirname'
 alias sl='(head -n 1 server_list && tail -n +2 server_list | sort -k2)'
