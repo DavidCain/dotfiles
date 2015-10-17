@@ -37,9 +37,12 @@ function cdir {
 alias pyinst='python setup.py install --user'
 
 alias fn='find . -name'
+alias p='cd $HOME/Projects/cht_policy'
 alias c='cd $HOME/cloudpercept'
+alias cpw='cd $HOME/Projects/cp-workers'
 alias ca='cd $HOME/cloudpercept/app'
 alias cl='cd $HOME/cloudpercept/lib'
 alias be='bundle exec'
 alias bi='bundle install'
 alias gg='git grep'
+alias sl='(head -n 1 server_list && tail -n +2 server_list | sort -k2)'
