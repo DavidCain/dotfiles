@@ -103,3 +103,5 @@ if [ -f ~/.private_bashrc ]; then
 fi
 
 export GREP_OPTIONS='--color=always'
+
+bind -m vi-insert "\C-l":clear-screen
