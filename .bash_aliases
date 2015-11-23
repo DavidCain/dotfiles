@@ -1,9 +1,6 @@
 export DROPBOX='/home/david/Desktop/Dropbox'
-export LEDGER_FILE='/home/david/Desktop/Dropbox/finance/david.gnucash'
 
 alias resume='cd $DROPBOX/Documents/Resume'
-
-alias clc="clear; echo This ain\'t MATLAB, buddeh"
 
 alias today='vim `date --iso-8601`.md'
 alias day='today'
@@ -37,17 +34,8 @@ function cdir {
 alias pyinst='python setup.py install --user'
 
 alias fn='find . -name'
-alias p='cd $HOME/Projects/cht_policy'
-alias c='cd $HOME/cloudpercept'
-alias cpw='cd $HOME/Projects/cp-workers'
-alias ca='cd $HOME/cloudpercept/app'
-alias cl='cd $HOME/cloudpercept/lib'
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
 alias gg='git g'
 
 alias gcd='cd "$(git root)"'
 
 alias dn='dirname'
-alias sl='(head -n 1 server_list && tail -n +2 server_list | sort -k2)'
