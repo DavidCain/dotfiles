@@ -19,6 +19,9 @@ function ocr {
 function pygrep {
     find . -name '*.py' -exec grep -H --color=always "$1" "{}" \;
 }
+function jsgrep {
+    find . -name '*.js' -exec grep -H --color=always "$1" "{}" \;
+}
 function rbgrep {
     find . -name '*.rb' -exec grep -H --color=always "$1" "{}" \;
 }
