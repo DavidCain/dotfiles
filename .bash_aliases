@@ -10,6 +10,7 @@ alias supercp='rsync --rsh='ssh' -av --progress --partial' # (source, dest)
 
 alias mksl='pandoc -t beamer -s slides.md -V theme:Warsaw -o pres.pdf'
 
+alias grep="grep --color=always"
 function ocr {
     convert $1 ocr_img.tiff
     tesseract ocr_img.tiff ocr_output
