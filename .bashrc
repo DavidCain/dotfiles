@@ -94,7 +94,12 @@ fi
 
 set -o vi
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
+if command_exists brew &&
+   [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
