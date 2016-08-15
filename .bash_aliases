@@ -1,4 +1,4 @@
-export DROPBOX='/home/david/Desktop/Dropbox'
+export DROPBOX='/home/david/Dropbox'
 
 alias resume='cd $DROPBOX/Documents/Resume'
 
