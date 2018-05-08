@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # install.sh
+
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR=$HOME/dotfiles_old/
 FILES=".bashrc .bash_aliases .inputrc .tmux.conf"
@@ -19,3 +21,20 @@ done
 
 echo
 echo "Old dotfiles archived in $BACKUP_DIR"
+echo
+
+# Fetch updates to Vim and Git files (or clone repos, if first load)
+cd $DIR
+git submodule update --init --recursive --remote
+cd -
+
+# Configure Vim
+ln -fsv $DIR/vimfiles     $HOME/.vim
+ln -fsv $HOME/.vim/.vimrc $HOME/.vimrc
+
+# Configure Git
+ln -fsv $DIR/gitfiles/.gitconfig_global $HOME/.gitconfig
+ln -fsv $DIR/gitfiles/.gitignore_global $HOME/.gitignore
+
+vim -c "PlugClean | PlugInstall | qa"
+echo "Vim plugins cleaned & installed with vim-plug"
