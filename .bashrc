@@ -103,7 +103,6 @@ if command_exists brew &&
     . `brew --prefix`/etc/bash_completion
 fi
 
-export PATH=$PATH:$HOME/android-sdk/sdk/tools:$HOME/android-sdk/sdk/platform-tools:$JAVA_HOME/bin
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 if [ -f ~/.private_bashrc ]; then
