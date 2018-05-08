@@ -1,27 +1,21 @@
 #!/bin/bash
 
 # install.sh
-#
-# Installs all the dotfiles (modeled after Michael J. Smalley's script)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BACKUP_DIR=$HOME/dotfiles_old/
+FILES=".bashrc .bash_aliases .inputrc .tmux.conf"
 
-dir=~/Documents/dotfiles          # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .inputrc .bash_aliases .tmux.conf"
+mkdir -p $BACKUP_DIR
 
-
-# create dotfiles_old in homedir
-echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-mkdir -p $olddir
-echo "done"
-
-# change to the dotfiles directory
-echo -n "Changing to the $dir directory ..."
-cd $dir
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-echo "Moving any existing dotfiles from ~ to $olddir"
-for file in $files; do
-    mv ~/$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/$file
+# First, backup each existing dotfile
+# Then replace with a symlink to version-controlled file
+for file in $FILES; do
+    # Copy file, then overwrite it withe a new symlink
+    # (Using `mv` doesn't handle the case where the original was a symlink)
+    # We want to backup _contents_, not an inode
+    cp ~/$file $BACKUP_DIR
+    ln -fsv $DIR/$file ~/$file
 done
+
+echo
+echo "Old dotfiles archived in $BACKUP_DIR"
