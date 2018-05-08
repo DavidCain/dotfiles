@@ -110,5 +110,7 @@ if [ -f ~/.private_bashrc ]; then
     . ~/.private_bashrc
 fi
 
-
 bind -m vi-insert "\C-l":clear-screen
+
+export WS_DJANGO_LOCAL=1
+#export OAUTH_JSON_CREDENTIALS='$HOME/oauth_credentials.json'

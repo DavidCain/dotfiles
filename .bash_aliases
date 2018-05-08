@@ -43,3 +43,12 @@ alias gg='git g'
 alias gcd='cd "$(git root)"'
 
 alias dn='dirname'
+
+if [ "$HOSTNAME" = "lif.domain" ]; then
+    alias ws='cd "$DROPBOX/MITOC/WS_Django"'
+    alias o=ws
+    alias m='cd $DROPBOX/MITOC/mitoc-member'
+    alias t='ws && cd ws/tests'
+    alias js='ws && cd ws/static/js'
+    alias a='cd $HOME/mitoc-ansible'
+fi
