@@ -113,3 +113,8 @@ bind -m vi-insert "\C-l":clear-screen
 
 export WS_DJANGO_LOCAL=1
 #export OAUTH_JSON_CREDENTIALS='$HOME/oauth_credentials.json'
+
+export GOODREADS_USER_ID=41926065
+#export GOODREADS_DEV_KEY='secret'  # See ~/.secrets_and_keys
+
+source $HOME/.secrets_and_keys
