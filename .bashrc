@@ -117,4 +117,8 @@ export WS_DJANGO_LOCAL=1
 export GOODREADS_USER_ID=41926065
 #export GOODREADS_DEV_KEY='secret'  # See ~/.secrets_and_keys
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source $HOME/.cargo/env
+
 source $HOME/.secrets_and_keys
