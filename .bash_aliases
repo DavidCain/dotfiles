@@ -1,3 +1,7 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 export DROPBOX='/home/david/Dropbox'
 
 alias resume='cd $DROPBOX/Documents/Resume'
