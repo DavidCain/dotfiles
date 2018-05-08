@@ -72,14 +72,7 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+source ~/.bash_aliases
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -100,14 +93,10 @@ command_exists () {
 
 if command_exists brew &&
    [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+    source `brew --prefix`/etc/bash_completion
 fi
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
-
-if [ -f ~/.private_bashrc ]; then
-    . ~/.private_bashrc
-fi
 
 bind -m vi-insert "\C-l":clear-screen
 
@@ -117,8 +106,6 @@ export WS_DJANGO_LOCAL=1
 export GOODREADS_USER_ID=41926065
 #export GOODREADS_DEV_KEY='secret'  # See ~/.secrets_and_keys
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-source $HOME/.cargo/env
-
-source $HOME/.secrets_and_keys
+[ -f ~/.fzf.bash ]             && source ~/.fzf.bash
+[ -f $HOME/.cargo/env ]        && source $HOME/.cargo/env
+[ -f $HOME/.secrets_and_keys ] && source $HOME/.secrets_and_keys
