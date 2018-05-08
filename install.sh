@@ -38,3 +38,5 @@ ln -fsv $DIR/gitfiles/.gitignore_global $HOME/.gitignore
 
 vim -c "PlugClean | PlugInstall | qa"
 echo "Vim plugins cleaned & installed with vim-plug"
+
+source $HOME/.bashrc
