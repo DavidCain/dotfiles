@@ -2,12 +2,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-export DROPBOX='/home/david/Dropbox'
-
-alias resume='cd $DROPBOX/Documents/Resume'
-
 alias today='vim `date --iso-8601`.md'
-alias day='today'
 
 alias gimme='sudo apt-get install'
 alias supercp='rsync --rsh='ssh' -av --progress --partial' # (source, dest)
@@ -27,9 +22,6 @@ function pygrep {
 function jsgrep {
     find . -name '*.js' -exec grep -H --color=always "$1" "{}" \;
 }
-function rbgrep {
-    find . -name '*.rb' -exec grep -H --color=always "$1" "{}" \;
-}
 
 function cdir {
     fn=$1
@@ -39,8 +31,6 @@ function cdir {
     cd `dirname "$fn"`
 }
 
-alias pyinst='python setup.py install --user'
-
 alias fn='find . -name'
 alias gg='git g'
 
@@ -48,11 +38,9 @@ alias gcd='cd "$(git root)"'
 
 alias dn='dirname'
 
-if [ "$HOSTNAME" = "lif.domain" ]; then
-    alias ws='cd "$DROPBOX/MITOC/WS_Django"'
-    alias o=ws
-    alias m='cd $DROPBOX/MITOC/mitoc-member'
-    alias t='ws && cd ws/tests'
-    alias js='ws && cd ws/static/js'
-    alias a='cd $HOME/mitoc-ansible'
-fi
+export DROPBOX='/home/david/Dropbox'
+alias a='cd "$DROPBOX/MITOC/mitoc-ansible"'
+alias m='cd "$DROPBOX/MITOC/mitoc-member"'
+alias o='cd "$DROPBOX/MITOC/mitoc-trips"'
+alias t='o && cd ws/tests'
+alias js='o && cd ws/static/js'
