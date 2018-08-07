@@ -95,3 +95,4 @@ export GOODREADS_USER_ID=41926065
 [ -f ~/.fzf.bash ]             && source ~/.fzf.bash
 [ -f $HOME/.cargo/env ]        && source $HOME/.cargo/env
 [ -f $HOME/.secrets_and_keys ] && source $HOME/.secrets_and_keys
+export FZF_DEFAULT_COMMAND='ag -g ""'
