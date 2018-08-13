@@ -35,6 +35,7 @@ ln -fsv $HOME/.vim/.vimrc $HOME/.vimrc
 # Configure Git
 ln -fsv $DIR/gitfiles/.gitconfig_global $HOME/.gitconfig
 ln -fsv $DIR/gitfiles/.gitignore_global $HOME/.gitignore
+ln -fsv $DIR/gitfiles/git_template $HOME/.git_template
 
 vim -c "PlugClean | PlugInstall | qa"
 echo "Vim plugins cleaned & installed with vim-plug"
