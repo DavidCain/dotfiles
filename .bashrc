@@ -96,4 +96,4 @@ export GOODREADS_USER_ID=41926065
 [ -f $HOME/.cargo/env ]        && source $HOME/.cargo/env
 [ -f $HOME/.secrets_and_keys ] && source $HOME/.secrets_and_keys
 [ -f $HOME/.bashrc_untracked ] && source $HOME/.bashrc_untracked
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --follow'
