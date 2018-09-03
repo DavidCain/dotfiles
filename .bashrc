@@ -36,34 +36,26 @@ shopt -s checkwinsize
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 
 # enable color support of ls
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=always'
-fi
+export CLICOLOR=1
 
 source ~/.bash_aliases
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-set -o vi
 
 command_exists () {
     type "$1" &> /dev/null ;
 }
 
-if command_exists brew &&
-   [ -f `brew --prefix`/etc/bash_completion ]; then
+# enable programmable completion features
+if ! shopt -oq posix; then
+  if command_exists brew && [ -f `brew --prefix`/etc/bash_completion ]; then
     source `brew --prefix`/etc/bash_completion
+  elif [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+  fi
 fi
+
+set -o vi
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
