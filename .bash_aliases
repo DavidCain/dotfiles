@@ -33,6 +33,10 @@ function cdir {
 
 alias fn='find . -name'
 alias gg='git g'
+# Search everything but unit tests
+function gc {
+    git g "$1" -- './*' ':!*test.py' ':!*.test.js'
+}
 
 alias gcd='cd "$(git root)"'
 
