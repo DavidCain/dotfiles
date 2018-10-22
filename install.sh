@@ -5,7 +5,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR=$HOME/dotfiles_old/
-FILES=".bashrc .bash_aliases .inputrc .tmux.conf"
+FILES=".bashrc .bash_aliases .inputrc .tmux.conf .hushlogin"
 
 mkdir -p $BACKUP_DIR
 
