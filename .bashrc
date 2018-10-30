@@ -71,3 +71,5 @@ export GOODREADS_USER_ID=41926065
 [ -f $HOME/.bashrc_untracked ] && source $HOME/.bashrc_untracked
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export GPG_TTY=$(tty)
