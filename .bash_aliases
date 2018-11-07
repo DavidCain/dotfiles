@@ -35,7 +35,7 @@ alias fn='find . -name'
 alias gg='git g'
 # Search everything but unit tests
 function gc {
-    git g "$1" -- './*' ':!*test.py' ':!*.test.js'
+    git g "$@" -- './*' ':!*test.py' ':!*.test.js' ':!**/testing/**'
 }
 
 alias gcd='cd "$(git root)"'
