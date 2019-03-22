@@ -76,3 +76,4 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 
 export GPG_TTY=$(tty)
+export PIPENV_VENV_IN_PROJECT=1
