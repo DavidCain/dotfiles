@@ -42,7 +42,7 @@ done
 if [[ -L $HOME/.vim ]]; then
     # Existing vimfiles are just a symlink
     # We can harmlessly remove the directory without causing data loss
-    rm -rf $HOME/.vim
+    rm $HOME/.vim
 elif [[ -d $HOME/.vim ]]; then
     # The existing ~/.vim is a directory. Back it up!
     rm -rf $BACKUP_DIR/.vim  # (Already committed this revision, if any)
