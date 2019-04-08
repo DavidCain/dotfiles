@@ -4,8 +4,13 @@
 
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-BACKUP_DIR=$HOME/dotfiles_old/
+BACKUP_DIR=$HOME/dotfiles_old
 FILES=".bashrc .bash_aliases .inputrc .tmux.conf .hushlogin"
+
+if [[ -e "$BACKUP_DIR" ]] && [[ ! -d $BACKUP_DIR/.git ]]; then
+    echo "Backup directory $BACKUP_DIR already exists and is not a Git repository."
+    exit 1
+fi
 
 mkdir -p $BACKUP_DIR
 pushd $BACKUP_DIR
@@ -13,7 +18,7 @@ git init  # Does nothing if already existing
 git config user.name "dotfiles installer"
 git config user.email "davidjosephcain@gmail.com"
 # If global Git config has a signing key, disable it
-# (We don't care about signing these commits, and don't want to propmpt for passphrase)
+# (We don't care about signing these commits, and don't want to prompt for passphrase)
 git config commit.gpgsign false
 popd
 
@@ -25,7 +30,7 @@ popd
 # We use the pattern of "copy first, then symlink" (instead of `mv`)
 # to always copy _contents_, in case the existing file is a symlink (`mv` preserves symlink)
 
-# Start with diff-so-fancy, which is configured in the Git pager
+# Start with diff-so-fancy, which is configured as the Git pager
 cp -f /usr/local/bin/diff-so-fancy $BACKUP_DIR/
 ln -fsv $DIR/diff-so-fancy /usr/local/bin/diff-so-fancy
 
