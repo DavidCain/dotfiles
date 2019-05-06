@@ -75,7 +75,7 @@ export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+command_exists pyenv && eval "$(pyenv init -)"
 
 export GPG_TTY=$(tty)
 export PIPENV_VENV_IN_PROJECT=1
