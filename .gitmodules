@@ -10,3 +10,6 @@
 [submodule "diff-so-fancy_repo"]
 	path = diff-so-fancy_repo
 	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule "tpm"]
+	path = tpm
+	url = https://github.com/tmux-plugins/tpm

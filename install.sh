@@ -21,6 +21,7 @@ git config user.email "davidjosephcain@gmail.com"
 git config commit.gpgsign false
 popd
 
+
 # ---------------------------------------- #
 #               Backup stage               #
 # ---------------------------------------- #
@@ -41,6 +42,20 @@ for file in $FILES; do
     cp ~/$file $BACKUP_DIR/
     ln -fsv $DIR/$file ~/$file
 done
+
+# Initialize the Tmux plugin manager
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+if [[ -L "$TPM_DIR" ]]; then
+    # Existing TPM directory is just a symlink
+    # We can harmlessly remove the directory without causing data loss
+    rm "$TPM_DIR"
+elif [[ -d "TPM_DIR" ]]; then
+    # The existing TPM is a directory. Back it up!
+    rm -rf "$BACKUP_DIR/tpm"  # (Already committed this revision, if any)
+    mv -v "$TPM_DIR" "$BACKUP_DIR/"
+fi
+ln -fsv "$DIR/tpm" "$TPM_DIR"
+
 
 # Finally, handle ~/.vim (which could be a directory, or a symlinked directory)
 if [[ -L $HOME/.vim ]]; then
@@ -79,6 +94,10 @@ ln -fsv $DIR/gitfiles/.gitignore_global $HOME/.gitignore
 rm $HOME/.git_template  # Remove existing symlink to avoid nesting
 ln -fsv $DIR/gitfiles/git_template $HOME/.git_template
 
+# Install Tmux plugins (see tpm/docs/changing_plugins_install_dir.md)
+"$HOME/.tmux/plugins/tpm/bin/install_plugins"
+
+# Install Vim plugins
 vim -c "PlugClean | PlugInstall | qa"
 echo "Vim plugins cleaned & installed with vim-plug"
 
