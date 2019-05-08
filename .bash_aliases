@@ -16,13 +16,6 @@ function ocr {
     rm -f ocr_img.tiff
 }
 
-function pygrep {
-    find . -name '*.py' -exec grep -H --color=always "$1" "{}" \;
-}
-function jsgrep {
-    find . -name '*.js' -exec grep -H --color=always "$1" "{}" \;
-}
-
 function cdir {
     fn=$1
     if git rev-parse --git-dir > /dev/null 2>&1; then
