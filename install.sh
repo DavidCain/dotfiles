@@ -44,6 +44,7 @@ for file in $FILES; do
 done
 
 # Initialize the Tmux plugin manager
+mkdir -p "$HOME/.tmux/plugins"
 TPM_DIR="$HOME/.tmux/plugins/tpm"
 if [[ -L "$TPM_DIR" ]]; then
     # Existing TPM directory is just a symlink
