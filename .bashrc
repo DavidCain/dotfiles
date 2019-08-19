@@ -78,6 +78,7 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 command_exists pyenv && eval "$(pyenv init -)"
 
 export GPG_TTY=$(tty)
+export PIP_REQUIRE_VIRTUALENV=true
 export PIPENV_VENV_IN_PROJECT=1
 
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
