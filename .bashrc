@@ -82,3 +82,5 @@ export PIP_REQUIRE_VIRTUALENV=true
 export PIPENV_VENV_IN_PROJECT=1
 
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
+
+export PATH="/usr/local/sbin:$PATH"
