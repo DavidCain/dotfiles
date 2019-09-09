@@ -41,6 +41,10 @@ function vgc {
 
 alias gcd='cd "$(git root)"'
 
+function gpip {
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
 alias dn='dirname'
 
 export DROPBOX='/home/david/Dropbox'
