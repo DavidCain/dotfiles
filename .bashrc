@@ -76,6 +76,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 command_exists pyenv && eval "$(pyenv init -)"
+command_exists pyenv && eval "$(pyenv virtualenv-init -)"
 
 export GPG_TTY=$(tty)
 export PIP_REQUIRE_VIRTUALENV=true
