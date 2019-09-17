@@ -1,6 +1,7 @@
 --recurse=yes
 --tag-relative=yes
 --exclude=.git
+--exclude=thrift/out
 
 --exclude=node_modules
 --exclude=gulp
