@@ -99,7 +99,8 @@ ln -fsv "$DIR/gitfiles/git_template" "$HOME/.git_template"
 # Install Tmux plugins (see tpm/docs/changing_plugins_install_dir.md)
 "$HOME/.tmux/plugins/tpm/bin/install_plugins"
 
-# Install Vim plugins
+# Eagerly install Vim plugins
+# (note: otherwise handled automatically on first Vim start)
 vim -c "PlugClean | PlugInstall | qa"
 echo "Vim plugins cleaned & installed with vim-plug"
 
