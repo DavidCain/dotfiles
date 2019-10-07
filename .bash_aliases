@@ -27,10 +27,9 @@ function cdir {
 alias fn='find . -name'
 alias gg='git g'
 function vgg {
-    vim $(git grep --name-only "$1")
+    git grep --quiet "$1" && vim $(git grep --name-only "$@")
 }
 
-alias gr='git gr'
 # Search everything but unit tests
 function gc {
     git g "$@" -- './*' ':!*test.py' ':!*.test.js' ':!**/testing/**'
