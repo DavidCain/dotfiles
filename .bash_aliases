@@ -46,6 +46,8 @@ function gpip {
 
 alias dn='dirname'
 
+alias mux='tmux attach || tmux new'
+
 export DROPBOX='/home/david/Dropbox'
 alias a='cd "$DROPBOX/MITOC/mitoc-ansible"'
 alias m='cd "$DROPBOX/MITOC/mitoc-member"'
