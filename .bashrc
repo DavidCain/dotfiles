@@ -78,6 +78,8 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 command_exists pyenv && eval "$(pyenv init -)"
 command_exists pyenv && eval "$(pyenv virtualenv-init -)"
 
+command_exists diff-so-fancy && export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
+
 export GPG_TTY=$(tty)
 export PIP_REQUIRE_VIRTUALENV=true
 export PIPENV_VENV_IN_PROJECT=1
