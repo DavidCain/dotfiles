@@ -1,10 +1,16 @@
-#!/bin/bash
+#!/bin/zsh
 
-# install.sh
+# Make path to zsh a standard shell, if not already.
+grep -Fxq "$(which zsh)" /etc/shells || sudo sh -c 'echo "$(which zsh)" >> /etc/shells'
+
+# Set zsh to be the default shell, if not already
+[ "$SHELL" = "$(which zsh)" ] || chsh -s "$(which zsh)"
+
+echo "Configured zsh as the default shell"
+
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR="$HOME/dotfiles_old"
-FILES=".bashrc .bash_aliases .inputrc .tmux.conf .hushlogin"
 
 if [[ -e "$BACKUP_DIR" ]] && [[ ! -d "$BACKUP_DIR/.git" ]]; then
     echo "Backup directory $BACKUP_DIR already exists and is not a Git repository."
@@ -35,7 +41,7 @@ cp -f /usr/local/bin/diff-so-fancy "$BACKUP_DIR/"
 ln -fsv "$DIR/diff-so-fancy" /usr/local/bin/diff-so-fancy
 
 # Follow up with normal dotfiles
-for file in $FILES; do
+for file (.zshrc .zsh_aliases .inputrc .tmux.conf .hushlogin) do
     # Copy file, then overwrite it withe a new symlink
     # (Using `mv` doesn't handle the case where the original was a symlink)
     # We want to backup _contents_, not an inode
@@ -104,4 +110,4 @@ ln -fsv "$DIR/gitfiles/git_template" "$HOME/.git_template"
 vim -c "PlugClean | PlugInstall | qa"
 echo "Vim plugins cleaned & installed with vim-plug"
 
-source "$HOME/.bashrc"
+source "$HOME/.zshrc"
