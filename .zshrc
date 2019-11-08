@@ -22,19 +22,6 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
-source $HOME/.zsh_aliases
-
-# Untracked files that should always be sourced
-[ -f $HOME/.secrets_and_keys ] && source $HOME/.secrets_and_keys
-[ -f $HOME/.zshrc_untracked  ] && source $HOME/.zshrc_untracked
-
-
-export EDITOR='vim'
-set -o vi
-
-# Don't add comments starting with space to the history.
-setopt HIST_IGNORE_SPACE
-
 # Use colors I'm familiar with
 # TODO (just defer to ZSH_THEME once I find a theme I'm happy with)
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -47,6 +34,30 @@ export GOODREADS_USER_ID=41926065
 export GPG_TTY=$(tty)
 
 
+
+# ------------------------------------------------------------------- #
+# Sourcing related files
+# ------------------------------------------------------------------- #
+source $HOME/.zsh_aliases
+# Untracked files that should always be sourced
+[ -f $HOME/.secrets_and_keys ] && source $HOME/.secrets_and_keys
+[ -f $HOME/.zshrc_untracked  ] && source $HOME/.zshrc_untracked
+
+
+# ------------------------------------------------------------------- #
+# Vim
+# ------------------------------------------------------------------- #
+export EDITOR='vim'
+set -o vi
+
+
+# ------------------------------------------------------------------- #
+# History
+# ------------------------------------------------------------------- #
+# Don't add comments starting with space to the history.
+setopt HIST_IGNORE_SPACE
+
+#
 # ------------------------------------------------------------------- #
 # FZF
 # ------------------------------------------------------------------- #
