@@ -56,6 +56,8 @@ set -o vi
 # ------------------------------------------------------------------- #
 # Don't add comments starting with space to the history.
 setopt HIST_IGNORE_SPACE
+# Execute history expansion commands (`!!`, `!$`, etc.) immediately, without an extra enter
+unsetopt HIST_VERIFY
 
 #
 # ------------------------------------------------------------------- #
