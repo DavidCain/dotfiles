@@ -12,7 +12,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git pyenv)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,7 +65,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Python
 # ------------------------------------------------------------------- #
 export PATH="$HOME/.pyenv/bin:$PATH"
-command_exists pyenv && eval "$(pyenv init -)"
+command_exists pyenv && eval "$(pyenv init - --no-rehash)"
 command_exists pyenv && eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
