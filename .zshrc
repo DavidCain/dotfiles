@@ -77,6 +77,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # ------------------------------------------------------------------- #
 # Python
 # ------------------------------------------------------------------- #
+export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 command_exists pyenv && eval "$(pyenv init - --no-rehash)"
 command_exists pyenv && eval "$(pyenv virtualenv-init -)"
