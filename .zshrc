@@ -33,6 +33,7 @@ export WS_DJANGO_LOCAL=1
 export GOODREADS_USER_ID=41926065
 export GPG_TTY=$(tty)
 
+export HOMEBREW_NO_ANALYTICS=1
 
 
 # ------------------------------------------------------------------- #
