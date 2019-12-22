@@ -41,7 +41,7 @@ cp -f /usr/local/bin/diff-so-fancy "$BACKUP_DIR/"
 ln -fsv "$DIR/diff-so-fancy" /usr/local/bin/diff-so-fancy
 
 # Follow up with normal dotfiles
-for file (.zshrc .zsh_aliases .inputrc .tmux.conf .hushlogin) do
+for file (.zshrc .zsh_aliases .inputrc .tmux.conf .ctags .hushlogin) do
     # Copy file, then overwrite it withe a new symlink
     # (Using `mv` doesn't handle the case where the original was a symlink)
     # We want to backup _contents_, not an inode
