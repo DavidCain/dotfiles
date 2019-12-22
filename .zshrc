@@ -6,6 +6,9 @@ export ZSH="/Users/david/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
+# Case-sensitive autocompletion
+CASE_SENSITIVE="true"
+
 # Disable marking untracked files # under VCS as dirty.
 # This makes repository status check for large repositories much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
