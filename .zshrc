@@ -86,6 +86,16 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 
 # ------------------------------------------------------------------- #
+# Ruby
+# ------------------------------------------------------------------- #
+# (After `brew install ruby`)
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+# (After `brew install rbenv`)
+command_exists rbenv && eval "$(rbenv init - --no-rehash)"
+# After `gem install --user-install`
+export PATH="/Users/david/.gem/ruby/2.7.0/bin:$PATH"
+
+# ------------------------------------------------------------------- #
 # Python
 # ------------------------------------------------------------------- #
 export PATH="$HOME/.poetry/bin:$PATH"
