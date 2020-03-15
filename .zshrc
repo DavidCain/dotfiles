@@ -16,6 +16,10 @@ CASE_SENSITIVE="true"
 # This makes repository status check for large repositories much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Disable verification of insecure directories (drastically speeds up startup)
+# See: https://github.com/ohmyzsh/ohmyzsh/blob/de2395c/lib/compfix.zsh#L39-L41
+ZSH_DISABLE_COMPFIX="true"
+
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=()
