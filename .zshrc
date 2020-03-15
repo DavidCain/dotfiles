@@ -1,4 +1,5 @@
-zmodload zsh/zprof
+# Uncomment line below (then call `zprof` after running commands) to profile
+#zmodload zsh/zprof
 
 # ------------------------------------------------------------------- #
 # Oh-my-zsh
@@ -117,4 +118,5 @@ export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 # ------------------------------------------------------------------- #
 command_exists direnv && eval "$(direnv hook zsh)"
 
-zprof
+# Uncomment (and run `zmodload zsh/zprof` at top of file) to profile previous commands
+#zprof
