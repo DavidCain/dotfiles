@@ -111,5 +111,9 @@ command_exists diff-so-fancy && export GIT_PAGER="diff-so-fancy | less --tabs=4 
 # ------------------------------------------------------------------- #
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 
+# ------------------------------------------------------------------- #
+# Direnv
+# ------------------------------------------------------------------- #
+command_exists direnv && eval "$(direnv hook zsh)"
 
 zprof
