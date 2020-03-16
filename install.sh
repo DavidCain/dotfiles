@@ -79,7 +79,7 @@ fi
 # Commit the changes (if any).
 pushd "$BACKUP_DIR"
 git add -A .
-git commit -m "Backup dotfiles"
+git commit -m "Back up dotfiles"
 popd
 
 echo
