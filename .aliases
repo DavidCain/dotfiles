@@ -12,8 +12,6 @@ alias today='vim `date --iso-8601`.md'
 alias gimme='sudo apt-get install'
 alias supercp='rsync --rsh='ssh' -av --progress --partial' # (source, dest)
 
-alias mksl='pandoc -t beamer -s slides.md -V theme:Warsaw -o pres.pdf'
-
 alias grep="grep --color=always"
 function ocr {
     convert $1 ocr_img.tiff
@@ -57,5 +55,3 @@ export DROPBOX='/home/david/Dropbox'
 alias a='cd "$DROPBOX/MITOC/mitoc-ansible"'
 alias m='cd "$DROPBOX/MITOC/mitoc-member"'
 alias o='cd "$DROPBOX/MITOC/mitoc-trips"'
-alias t='o && cd ws/tests'
-alias js='o && cd ws/static/js'
