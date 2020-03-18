@@ -1,16 +1,27 @@
-#!/bin/zsh
+#! /usr/bin/env bash
 
-# Make path to zsh a standard shell, if not already.
-grep -Fxq "$(which zsh)" /etc/shells || sudo sh -c 'echo "$(which zsh)" >> /etc/shells'
+command_exists () {
+    type "$1" &> /dev/null ;
+}
 
-# Set zsh to be the default shell, if not already
-[ "$SHELL" = "$(which zsh)" ] || chsh -s "$(which zsh)"
+# Try to make zsh the default shell
+if command_exists zsh;
+then
+    # Make path to zsh a standard shell, if not already.
+    grep -Fxq "$(which zsh)" /etc/shells || sudo sh -c 'echo "$(which zsh)" >> /etc/shells'
 
-echo "Configured zsh as the default shell"
+    # Set zsh to be the default shell, if not already
+    [ "$SHELL" = "$(which zsh)" ] || chsh -s "$(which zsh)"
+
+    echo "Configured zsh as the default shell"
+else
+    echo "zsh not available -- unable to make default shell"
+fi
 
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR="$HOME/dotfiles_old"
+FILES=".bashrc .zshrc .bash_or_zshrc .aliases .inputrc .tmux.conf .ctags .hushlogin .alacritty.yml"
 
 if [[ -e "$BACKUP_DIR" ]] && [[ ! -d "$BACKUP_DIR/.git" ]]; then
     echo "Backup directory $BACKUP_DIR already exists and is not a Git repository."
@@ -41,7 +52,7 @@ cp -f /usr/local/bin/diff-so-fancy "$BACKUP_DIR/"
 ln -fsv "$DIR/diff-so-fancy" /usr/local/bin/diff-so-fancy
 
 # Follow up with normal dotfiles
-for file (.zshrc .zsh_aliases .inputrc .tmux.conf .ctags .hushlogin .alacritty.yml) do
+for file in $FILES; do
     # Copy file, then overwrite it withe a new symlink
     # (Using `mv` doesn't handle the case where the original was a symlink)
     # We want to backup _contents_, not an inode
@@ -109,5 +120,3 @@ ln -fsv "$DIR/gitfiles/git_template" "$HOME/.git_template"
 # (note: otherwise handled automatically on first Vim start)
 vim -c "PlugClean | PlugInstall | qa"
 echo "Vim plugins cleaned & installed with vim-plug"
-
-source "$HOME/.zshrc"
