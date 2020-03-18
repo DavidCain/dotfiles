@@ -131,6 +131,8 @@ export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 # Direnv
 # ------------------------------------------------------------------- #
 command_exists direnv && eval "$(direnv hook zsh)"
+# Silence the usual messages about `direnv: leading` and `direnv: export`
+export DIRENV_LOG_FORMAT=
 
 # Uncomment (and run `zmodload zsh/zprof` at top of file) to profile previous commands
 #zprof
