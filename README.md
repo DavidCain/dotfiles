@@ -33,3 +33,34 @@ symlink to its equivalent file within this repository. Any changes within the
 repository will be reflected immediately upon sourcing dotfiles. Conversely,
 editing dotfiles directly will give the opportunity to stage any changes and
 version control them here.
+
+## Possibly absent binaries
+My rc files are written to minimize assumptions that any given third-party tool
+is actually available on the system. For instance, `vim` is assumed to be
+available (it's assigned to `$EDITOR`), but `node` is *not* presumed to be
+installed.
+
+Any lines that depend on a third-party executable are generally wrapped in a
+check to first make sure that the executable is present in `$PATH`. If absent,
+the line will silently decline to execute.
+
+For these dotfiles to work best, executables should be installed separately.
+Referenced tools include (but are not limited to):
+
+- Version managers:
+    - `pyenv`
+    - `rbenv`
+    - `nvm`
+- Build tools:
+    - `cargo`
+    - `pipenv`
+    - `poetry`
+- Miscellaneous tools:
+    - `direnv`
+    - `fzf`
+    - `diff-so-fancy`
+
+Other env vars only make sense if a given tool is installed. For instance
+`HOMEBREW_NO_ANALYTICS` only makes sense when `Homebrew` is installed. These
+values are harmless if the tool is not present (e.g. Linux systems don't care
+about `brew`)
