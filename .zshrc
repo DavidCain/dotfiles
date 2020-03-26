@@ -9,7 +9,12 @@
 [ -v ZSH_PROF ] && zmodload zsh/zprof
 
 
-source "$HOME/.bash_or_zshrc"
+# ------------------------------------------------------------------- #
+# General
+# ------------------------------------------------------------------- #
+# Vim mode
+bindkey -v
+export KEYTIMEOUT=1  # 100 ms timeout after ESC, instead of 400ms
 
 
 # ------------------------------------------------------------------- #
@@ -36,6 +41,9 @@ ZSH_DISABLE_COMPFIX="true"
 plugins=()
 
 source "$ZSH/oh-my-zsh.sh"
+source "$HOME/.bash_or_zshrc"
+
+
 #
 # Use colors I'm familiar with
 # TODO (just defer to ZSH_THEME once I find a theme I'm happy with)
