@@ -16,7 +16,7 @@ source "$HOME/.bash_or_zshrc"
 # Oh-my-zsh
 # ------------------------------------------------------------------- #
 # Path to oh-my-zsh installation
-export ZSH="/Users/david/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
