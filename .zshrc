@@ -49,6 +49,12 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 setopt HIST_IGNORE_SPACE
 # Execute history expansion commands (`!!`, `!$`, etc.) immediately, without an extra enter
 unsetopt HIST_VERIFY
+# If history needs to be trimmed to add the current command, oldest duplicate is deleted first
+setopt HIST_EXPIRE_DUPS_FIRST
+# Don't enter duplicate commands into history
+setopt HIST_IGNORE_DUPS
+# Older duplicates are removed if adding a new duplicate into history
+setopt HIST_IGNORE_ALL_DUPS
 
 
 # ------------------------------------------------------------------- #
