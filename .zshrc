@@ -10,14 +10,6 @@
 
 
 # ------------------------------------------------------------------- #
-# General
-# ------------------------------------------------------------------- #
-# Vim mode
-bindkey -v
-export KEYTIMEOUT=1  # 100 ms timeout after ESC, instead of 400ms
-
-
-# ------------------------------------------------------------------- #
 # Oh-my-zsh
 # ------------------------------------------------------------------- #
 # Path to oh-my-zsh installation
@@ -43,11 +35,17 @@ plugins=()
 source "$ZSH/oh-my-zsh.sh"
 source "$HOME/.bash_or_zshrc"
 
-
-#
 # Use colors I'm familiar with
 # TODO (just defer to ZSH_THEME once I find a theme I'm happy with)
 export LSCOLORS=ExFxCxDxBxegedabagacad
+
+
+# ------------------------------------------------------------------- #
+# General
+# ------------------------------------------------------------------- #
+# Vim mode
+bindkey -v
+export KEYTIMEOUT=1  # 100 ms timeout after ESC, instead of 400ms
 
 
 # ------------------------------------------------------------------- #
