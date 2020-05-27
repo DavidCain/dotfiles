@@ -29,20 +29,35 @@ function cdir {
 
 alias fn='find . -name'
 alias gg='git g'
+
+# Search all tracked files & load buffers for matching files
 function vgg {
-    git grep --quiet "$@" && vim "$(git grep --name-only "$@")"
+    # xargs flags:
+    # -o: Reopen stdin as /dev/tty in the child process before executing vim.
+    #     Prevents Vim error "Input is not from a terminal"
+    #     (& stdin being messed up after exit)
+    # -0: read list will NUL delimiter (handles weird filenames, spaces, special chars)
+    git grep --quiet "$@" && git grep --null --name-only "$@" | xargs -o -0 vim
 }
 
 # Search everything but unit tests
 function gc {
     git g "$@" -- './*' ':!*test.py' ':!*.test.js' ':!**/testing/**' ':!*Test.kt'
 }
+
+# Search everything but unit tests & load buffers for matching files
 function vgc {
-    gc --quiet "$@" && vim "$(gc --name-only "$@")"
+    # xargs flags:
+    # -o: Reopen stdin as /dev/tty in the child process before executing vim.
+    #     Prevents Vim error "Input is not from a terminal"
+    #     (& stdin being messed up after exit)
+    # -0: read list will NUL delimiter (handles weird filenames, spaces, special chars)
+    gc --quiet "$@" && gc --null --name-only "$@" | xargs -o -0 vim
 }
 
 alias gcd='cd "$(git root)"'
 
+# Run pip *g*lobally for special cases where we do indeed want to install outside a venv
 function gpip {
     PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
