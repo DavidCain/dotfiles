@@ -31,13 +31,14 @@ alias fn='find . -name'
 alias gg='git g'
 
 # Search all tracked files & load buffers for matching files
+# Start by searching for the expression, which is assumed to be argument 1.
 function vgg {
     # xargs flags:
     # -o: Reopen stdin as /dev/tty in the child process before executing vim.
     #     Prevents Vim error "Input is not from a terminal"
     #     (& stdin being messed up after exit)
     # -0: read list will NUL delimiter (handles weird filenames, spaces, special chars)
-    git grep --quiet "$@" && git grep --null --name-only "$@" | xargs -o -0 vim
+    git grep --quiet "$@" && git grep --null --name-only "$@" | xargs -o -0 vim -c "/$1"
 }
 
 # Search everything but unit tests
@@ -46,13 +47,14 @@ function gc {
 }
 
 # Search everything but unit tests & load buffers for matching files
+# Start by searching for the expression, which is assumed to be argument 1.
 function vgc {
     # xargs flags:
     # -o: Reopen stdin as /dev/tty in the child process before executing vim.
     #     Prevents Vim error "Input is not from a terminal"
     #     (& stdin being messed up after exit)
     # -0: read list will NUL delimiter (handles weird filenames, spaces, special chars)
-    gc --quiet "$@" && gc --null --name-only "$@" | xargs -o -0 vim
+    gc --quiet "$@" && gc --null --name-only "$@" | xargs -o -0 vim -c "/$1"
 }
 
 alias gcd='cd "$(git root)"'
