@@ -35,7 +35,7 @@ function vgg {
 
 # Search everything but unit tests
 function gc {
-    git g "$@" -- './*' ':!*test.py' ':!*.test.js' ':!**/testing/**'
+    git g "$@" -- './*' ':!*test.py' ':!*.test.js' ':!**/testing/**' ':!*Test.kt'
 }
 function vgc {
     gc --quiet "$@" && vim "$(gc --name-only "$@")"
