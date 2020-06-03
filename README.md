@@ -48,9 +48,9 @@ For these dotfiles to work best, executables should be installed separately.
 Referenced tools include (but are not limited to):
 
 - Version managers:
+    - `asdf`
     - `pyenv`
-    - `rbenv`
-    - `nvm`
+    - `rbenv` (may replace with `asdf` soon enough)
 - Build tools:
     - `cargo`
     - `pipenv`

@@ -47,6 +47,15 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 
 # ------------------------------------------------------------------- #
+# asdf Package management (all frameworks)
+# ------------------------------------------------------------------- #
+# See: https://asdf-vm.com/#/core-manage-asdf-vm
+source /usr/local/opt/asdf/asdf.sh  # (Inlined brew prefix for speed)
+# TODO: Use the zsh completions instead of just bash (though these work)
+source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+
+# ------------------------------------------------------------------- #
 # Ruby
 # ------------------------------------------------------------------- #
 # (After `brew install ruby`)
@@ -68,14 +77,6 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 export PIP_REQUIRE_VIRTUALENV=true
 export PIPENV_VENV_IN_PROJECT=1
-
-
-# ------------------------------------------------------------------- #
-# JavaScript
-# ------------------------------------------------------------------- #
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# To load NVM (rather slow, and generally not needed since I don't do much JS development):
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 
 # ------------------------------------------------------------------- #
