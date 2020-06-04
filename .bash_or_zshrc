@@ -50,9 +50,12 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # asdf Package management (all frameworks)
 # ------------------------------------------------------------------- #
 # See: https://asdf-vm.com/#/core-manage-asdf-vm
-source /usr/local/opt/asdf/asdf.sh  # (Inlined brew prefix for speed)
-# TODO: Use the zsh completions instead of just bash (though these work)
-source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+if command_exists asdf
+then
+    source /usr/local/opt/asdf/asdf.sh  # (Inlined brew prefix for speed)
+    # TODO: Use the zsh completions instead of just bash (though these work)
+    source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+fi
 
 
 # ------------------------------------------------------------------- #
