@@ -17,6 +17,9 @@ export GPG_TTY=$(tty)
 
 export HOMEBREW_NO_ANALYTICS=1
 
+# Homebrew's sbin
+export PATH="/usr/local/sbin:$PATH"
+
 # ------------------------------------------------------------------- #
 # Sourcing related files
 # ------------------------------------------------------------------- #
