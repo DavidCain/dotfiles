@@ -8,10 +8,6 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
-# Always use local env vars when running MITOC trips
-# TODO: Use dotenv or similar to manage this. It's already in the Makefile...
-export WS_DJANGO_LOCAL=1
-
 export GOODREADS_USER_ID=41926065
 export GPG_TTY=$(tty)
 
