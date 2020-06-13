@@ -86,7 +86,7 @@ export PIPENV_VENV_IN_PROJECT=1
 # ------------------------------------------------------------------- #
 if command_exists delta
 then
-    export GIT_PAGER='delta --dark'
+    export GIT_PAGER='delta --dark --width=variable'
 elif command_exists diff-so-fancy
 then
     export GIT_PAGER="diff-so-fancy | less --tabs=4 -RFX"
