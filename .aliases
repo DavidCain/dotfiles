@@ -68,7 +68,7 @@ alias dn='dirname'
 
 alias mux='tmux attach || tmux new'
 
-export DROPBOX='/home/david/Dropbox'
+export DROPBOX="$HOME/Dropbox"
 alias a='cd "$DROPBOX/MITOC/mitoc-ansible"'
 alias m='cd "$DROPBOX/MITOC/mitoc-member"'
 alias o='cd "$DROPBOX/MITOC/mitoc-trips"'
