@@ -103,3 +103,13 @@ export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 # ------------------------------------------------------------------- #
 # Silence the usual messages about `direnv: leading` and `direnv: export`
 export DIRENV_LOG_FORMAT=
+
+# ------------------------------------------------------------------- #
+# JavaScript
+# ------------------------------------------------------------------- #
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+# ------------------------------------------------------------------- #
+# Java
+# ------------------------------------------------------------------- #
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
