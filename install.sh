@@ -1,4 +1,7 @@
 #! /usr/bin/env bash
+# TODO: This is a really simple installation script that should be cross-platform.
+# However, as I start tracking more files, I might consider a more robust dotfile manager.
+# One candidate: https://github.com/anishathalye/dotbot
 
 command_exists () {
     type "$1" &> /dev/null ;
