@@ -8,13 +8,18 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
-export GOODREADS_USER_ID=41926065
+# ------------------------------------------------------------------- #
+# GPG
+# ------------------------------------------------------------------- #
+# *Maybe* Not needed after GnuPG 2.1.0 (https://juliansimioni.com/blog/troubleshooting-gpg-git-commit-signing/)
 export GPG_TTY=$(tty)
 
-export HOMEBREW_NO_ANALYTICS=1
 
-# Homebrew's sbin
+# ------------------------------------------------------------------- #
+# Homebrew
+# ------------------------------------------------------------------- #
 export PATH="/usr/local/sbin:$PATH"
+export HOMEBREW_NO_ANALYTICS=1
 
 # ------------------------------------------------------------------- #
 # Sourcing related files
