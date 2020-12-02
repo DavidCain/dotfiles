@@ -66,7 +66,19 @@ setopt HIST_IGNORE_ALL_DUPS
 # ------------------------------------------------------------------- #
 # FZF
 # ------------------------------------------------------------------- #
+# On Homebrew, this is the location of the zsh completion script
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# If using the Debian-installed fzf, a separate completion script is distributed.
+# See the description in `apt-cache show fzf`
+if [ -f  /usr/share/doc/fzf/examples/key-bindings.zsh ]
+then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+# The FZF install script (`install --all`) makes this directory
+# (I prefer this version of managing FZF, generally)
+elif [ -f ~/.fzf/shell/key-bindings.zsh ]
+then
+    source ~/.fzf/shell/key-bindings.zsh
+fi
 
 
 # ------------------------------------------------------------------- #
