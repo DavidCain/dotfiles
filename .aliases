@@ -27,6 +27,11 @@ function cdir {
     cd `dirname "$fn"`
 }
 
+if [ $(which pbcopy > /dev/null) ]
+then
+    alias pbcopy="xclip"
+fi
+
 alias fn='find . -name'
 alias gg='git g'
 
