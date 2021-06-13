@@ -21,6 +21,11 @@ else
     echo "zsh not available -- unable to make default shell"
 fi
 
+# Add `asdf` (a utility for managing other tool versions)
+# (Could instead install with package managers like `pacman` or `brew`, but this is cross-platform)
+if [ ! -d "${HOME}/.asdf" ]; then
+    git clone https://github.com/asdf-vm/asdf.git "${HOME}/.asdf"
+fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR="$HOME/dotfiles_old"

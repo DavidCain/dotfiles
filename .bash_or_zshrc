@@ -55,9 +55,12 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # ------------------------------------------------------------------- #
 # asdf Package management (all frameworks)
 # ------------------------------------------------------------------- #
-# See: https://asdf-vm.com/#/core-manage-asdf-vm
-if command_exists asdf
-then
+# See: https://asdf-vm.com/#/core-manage-asdf
+# Example use (Python): `asdf plugn add python && asdf install python 3.6.13`
+if [ -f "${HOME}/.asdf/asdf.sh" ]; then
+    source "${HOME}/.asdf/asdf.sh"
+    source "${HOME}/.asdf/completions/asdf.bash";
+elif command_exists asdf; then  # Infer installed with Homebrew
     source /usr/local/opt/asdf/asdf.sh  # (Inlined brew prefix for speed)
     # TODO: Use the zsh completions instead of just bash (though these work)
     source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
@@ -65,24 +68,11 @@ fi
 
 
 # ------------------------------------------------------------------- #
-# Ruby
-# ------------------------------------------------------------------- #
-# (After `brew install ruby`)
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-# (After `brew install rbenv`)
-command_exists rbenv && eval "$(rbenv init - --no-rehash)"
-# After `gem install --user-install`
-export PATH="/Users/david/.gem/ruby/2.7.0/bin:$PATH"
-
-
-# ------------------------------------------------------------------- #
 # Python
 # ------------------------------------------------------------------- #
+# Make sure to use `asdf` to install Python versions:
+# asdf plugin add python
 export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/.pyenv/bin:$PATH"
-command_exists pyenv && eval "$(pyenv init - --no-rehash)"
-command_exists pyenv && eval "$(pyenv virtualenv-init -)"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 export PIP_REQUIRE_VIRTUALENV=true
 export PIPENV_VENV_IN_PROJECT=1
