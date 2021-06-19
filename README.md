@@ -15,9 +15,25 @@ each are tracked as submodules:
 - [gitfiles](https://github.com/DavidCain/gitfiles)
 
 # Installation
-```bash
-./install.sh
-```
+
+1. Install critical system-wide packages (TODO: Brewfile for OS X)
+   ```bash
+   sudo apt install \
+     neovim \   # (Or Vim)
+     tmux \
+   ```
+2. Run script:
+   ```bash
+   ./install.sh
+   ```
+3. Optionally install extra helpful packages:
+   ```bash
+   sudo apt install \
+     direnv \     # Sourcing `.envrc` files
+     gpg \        # Signs Git commits by default
+     ripgrep \    # Referenced in vimrc
+     shellcheck \
+   ```
 
 ## How installation works
 The install script will not remove any existing configuration without backing
@@ -47,18 +63,13 @@ the line will silently decline to execute.
 For these dotfiles to work best, executables should be installed separately.
 Referenced tools include (but are not limited to):
 
-- Version managers:
-    - `asdf`
-    - `pyenv`
-    - `rbenv` (may replace with `asdf` soon enough)
 - Build tools:
     - `cargo`
-    - `pipenv`
     - `poetry`
 - Miscellaneous tools:
     - `direnv`
     - `fzf`
-    - `diff-so-fancy`
+    - `ripgrep`
 
 Other env vars only make sense if a given tool is installed. For instance
 `HOMEBREW_NO_ANALYTICS` only makes sense when `Homebrew` is installed. These

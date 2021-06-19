@@ -112,9 +112,17 @@ echo "Updating all submodules (vimfiles, gitfiles, etc.)"
 git submodule update --init --recursive
 cd -
 
-# Configure Vim
+# Configure Vim/Neovim
 ln -fsv "$DIR/vimfiles"   "$VIM_DIR"
 ln -fsv "$VIM_DIR/.vimrc" "$HOME/.vimrc"
+
+mkdir -p ~/.config/nvim
+init_vim="${HOME}/.config/nvim/init.vim"
+if [ ! -d "${init_vim}" ]; then
+   echo 'set runtimepath^=~/.vim runtimepath+=~/.vim/after' > "${init_vim}"
+   echo 'let &packpath=&runtimepath'                       >> "${init_vim}"
+   echo 'source ~/.vimrc'                                  >> "${init_vim}"
+fi
 
 # Configure Git
 ln -fsv "$DIR/gitfiles/.gitconfig_global" "$HOME/.gitconfig"
@@ -127,5 +135,11 @@ ln -fsv "$DIR/gitfiles/git_template" "$HOME/.git_template"
 
 # Eagerly install Vim plugins
 # (note: otherwise handled automatically on first Vim start)
-vim -c "PlugClean | PlugInstall | qa"
+if command_exists nvim;
+then
+    nvim --headless +PlugClean +PlugInstall +qa
+elif command_exists vim;
+then
+    vim -c "PlugClean | PlugInstall | qa"
+fi
 echo "Vim plugins cleaned & installed with vim-plug"
