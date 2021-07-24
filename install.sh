@@ -55,11 +55,6 @@ popd
 # We use the pattern of "copy first, then symlink" (instead of `mv`)
 # to always copy _contents_, in case the existing file is a symlink (`mv` preserves symlink)
 
-# Start with diff-so-fancy, which is configured as the Git pager
-[[ -f /usr/local/bin/diff-so-fancy ]] && cp /usr/local/bin/diff-so-fancy "$BACKUP_DIR/"
-# TODO: `/usr/local/bin` is `root:root` on Linux, this won't work.
-ln -fsv "$DIR/diff-so-fancy" /usr/local/bin/diff-so-fancy
-
 # Follow up with normal dotfiles
 for file in $FILES; do
     # Copy file, then overwrite it withe a new symlink
