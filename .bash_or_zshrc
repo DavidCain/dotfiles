@@ -70,10 +70,6 @@ fi
 # ------------------------------------------------------------------- #
 # Python
 # ------------------------------------------------------------------- #
-# Make sure to use `asdf` to install Python versions:
-# asdf plugin add python
-export PATH="$HOME/.poetry/bin:$PATH"
-
 export PIP_REQUIRE_VIRTUALENV=true
 export PIPENV_VENV_IN_PROJECT=1
 
