@@ -16,8 +16,9 @@ each are tracked as submodules:
 
 # Installation
 
-1. Install critical system-wide packages (TODO: Brewfile for OS X)
+1. Install critical system-wide packages
    ```bash
+   brew bundle install  # Mac, presumes Homebrew
    sudo apt install \
      neovim \   # (Or Vim)
      tmux \
@@ -31,7 +32,8 @@ each are tracked as submodules:
    sudo apt install \
      direnv \     # Sourcing `.envrc` files
      gpg \        # Signs Git commits by default
-     ripgrep \    # Referenced in vimrc
+     git-delta \  # Better Git PAGER
+     ripgrep \    # Referenced in .vimrc, used for fzf
      shellcheck \
    ```
 
