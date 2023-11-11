@@ -61,9 +61,7 @@ if [ -f "${HOME}/.asdf/asdf.sh" ]; then
     source "${HOME}/.asdf/asdf.sh"
     source "${HOME}/.asdf/completions/asdf.bash";
 elif command_exists asdf; then  # Infer installed with Homebrew
-    source /usr/local/opt/asdf/libexec/asdf.sh # (Inlined brew prefix for speed)
-    # TODO: Use the zsh completions instead of just bash (though these work)
-    source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+    source "${HOMEBREW_PREFIX}/opt/asdf/libexec/asdf.sh"
 fi
 
 
