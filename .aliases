@@ -81,7 +81,7 @@ function vgg {
 
 # Search everything but unit tests
 function gc {
-    git g "$@" -- './*' ':!*test.py' ':!test_.py' ':!*.test.js' ':!**/testing/**' ':!*.snap'
+    git g "$@" -- './*' ':!*test.py' ':!*test_*.py' ':!*.test.js' ':!**/testing/**' ':!*.snap'
 }
 
 # Search everything but unit tests & load buffers for matching files
