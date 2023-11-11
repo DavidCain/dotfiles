@@ -27,6 +27,13 @@ if [ ! -d "${HOME}/.asdf" ]; then
     git clone https://github.com/asdf-vm/asdf.git "${HOME}/.asdf"
 fi
 
+# Simply clone oh-my-zsh
+# It comes with a more complicated installer, but forget that.
+# The installer silently modifies your `.zshrc`, and I don't want that.
+if [ ! -d "${HOME}/.oh-my-zsh" ]; then
+  git clone git@github.com:ohmyzsh/ohmyzsh.git "${HOME}/.oh-my-zsh"
+fi
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR="$HOME/dotfiles_old"
 FILES=".bashrc .zshrc .bash_or_zshrc .aliases .inputrc .tmux.conf .ctags .hushlogin .alacritty.yml"

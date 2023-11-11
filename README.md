@@ -16,26 +16,23 @@ each are tracked as submodules:
 
 # Installation
 
-1. Install critical system-wide packages
+1. Configure Homebrew (rcfiles will later be auto-edited)
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   ```
+2. Install critical system-wide packages
    ```bash
    brew bundle install  # Mac, presumes Homebrew
    sudo apt install \
      neovim \   # (Or Vim)
-     tmux \
+     tmux
    ```
-2. Run script:
+3. Run script:
    ```bash
    ./install.sh
    ```
-3. Optionally install extra helpful packages:
-   ```bash
-   sudo apt install \
-     direnv \     # Sourcing `.envrc` files
-     gpg \        # Signs Git commits by default
-     git-delta \  # Better Git PAGER
-     ripgrep \    # Referenced in .vimrc, used for fzf
-     shellcheck \
-   ```
+4. Restart shell (or start up Alacritty!)
 
 ## How installation works
 The install script will not remove any existing configuration without backing
