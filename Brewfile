@@ -1,5 +1,6 @@
 tap "homebrew/cask"
 brew "direnv"
+brew "gh"
 brew "git"
 brew "git-delta"
 brew "gnupg"

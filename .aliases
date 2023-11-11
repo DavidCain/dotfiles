@@ -66,6 +66,8 @@ alias gb='fzf-git-branch'
 alias gco='fzf-git-checkout'
 alias gg='git g'
 
+alias push="git push && gh pr create -fd && gh pr view -w"
+
 # Search all tracked files & load buffers for matching files
 # Start by searching for the expression, which is assumed to be argument 1.
 function vgg {
