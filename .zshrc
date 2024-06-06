@@ -6,6 +6,11 @@
 # ------------------------------------------------------------------- #
 # Profiling [1/2]
 # ------------------------------------------------------------------- #
+# Easy profile option: ZSH_PROF=1 source ~/.zshrc
+# Another option:
+#
+#     $ git clone https://github.com/romkatv/zsh-bench ~/git_repos/zsh-bench
+#     $ !$/zsh-bench
 [ -v ZSH_PROF ] && zmodload zsh/zprof
 
 
@@ -32,7 +37,9 @@ ZSH_DISABLE_COMPFIX="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=()
 
-source "$ZSH/oh-my-zsh.sh"
+# Don't execute `.oh-my-zsh/tools/check_for_upgrade.sh`, takes ~60ms
+# (I can invoke `omz update` manually whenever)
+DISABLE_AUTO_UPDATE="true" source "$ZSH/oh-my-zsh.sh"
 source "$HOME/.bash_or_zshrc"
 
 # Use colors I'm familiar with
