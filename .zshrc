@@ -37,6 +37,19 @@ ZSH_DISABLE_COMPFIX="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=()
 
+# Use a simple zcompdump, vs the standard which uses host & zsh version
+# https://github.com/ohmyzsh/ohmyzsh/blob/249c708ed3a/oh-my-zsh.sh#L107
+ZSH_COMPDUMP="${HOME}/.zcompdump"
+
+# Shave ~300 ms (!!) off startup time by just using cache.
+# `oh-my-zsh.sh` invokes a plain `autoload -U compaudit compinit`.
+autoload -Uz compinit;
+if [ ! -f "${ZSH_COMPDUMP}" ] || [ "$(find "${ZSH_COMPDUMP}" -mtime +1)" ] ; then
+    echo "Reloading completions to ${ZSH_COMPDUMP} (should occur at most once daily)"
+    compinit
+fi
+compinit -C
+
 # Don't execute `.oh-my-zsh/tools/check_for_upgrade.sh`, takes ~60ms
 # (I can invoke `omz update` manually whenever)
 DISABLE_AUTO_UPDATE="true" source "$ZSH/oh-my-zsh.sh"
