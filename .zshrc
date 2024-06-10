@@ -46,6 +46,9 @@ ZSH_COMPDUMP="${HOME}/.zcompdump"
 autoload -Uz compinit;
 if [ ! -f "${ZSH_COMPDUMP}" ] || [ "$(find "${ZSH_COMPDUMP}" -mtime +1)" ] ; then
     echo "Reloading completions to ${ZSH_COMPDUMP} (should occur at most once daily)"
+    # Force deletion to get new mtime
+    # Could just as easily use `touch`, but I want proof that this file is actually created/edited.
+    [ -f "${ZSH_COMPDUMP}" ] && rm "${ZSH_COMPDUMP}"
     compinit
 fi
 compinit -C
