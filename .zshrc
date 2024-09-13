@@ -44,14 +44,15 @@ ZSH_COMPDUMP="${HOME}/.zcompdump"
 # Shave ~300 ms (!!) off startup time by just using cache.
 # `oh-my-zsh.sh` invokes a plain `autoload -U compaudit compinit`.
 autoload -Uz compinit;
-if [ ! -f "${ZSH_COMPDUMP}" ] || [ "$(find "${ZSH_COMPDUMP}" -mtime +1)" ] ; then
-    echo "Reloading completions to ${ZSH_COMPDUMP} (should occur at most once daily)"
-    # Force deletion to get new mtime
-    # Could just as easily use `touch`, but I want proof that this file is actually created/edited.
-    [ -f "${ZSH_COMPDUMP}" ] && rm "${ZSH_COMPDUMP}"
+() {
+  setopt extendedglob local_options
+
+  if [[ -n ${ZSH_COMPDUMP}(#qN.mh+24) ]]; then
     compinit
-fi
-compinit -C
+  else
+    compinit -C
+  fi
+}
 
 # Don't execute `.oh-my-zsh/tools/check_for_upgrade.sh`, takes ~60ms
 # (I can invoke `omz update` manually whenever)
