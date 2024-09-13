@@ -42,7 +42,7 @@ export EDITOR='vim'
 # NOTE: Shell completion & shortcut bindings will be specific to each shell.
 # There is more configuration in `.zshrc` for shell integration.
 # `bindkey | grep fzf` can be used to check that mappings went through.
-export FZF_DEFAULT_COMMAND='rg --files --follow'
+export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 
