@@ -1,4 +1,5 @@
 tap "homebrew/cask"
+brew "atuin"
 brew "colima"
 brew "direnv"
 brew "docker"
