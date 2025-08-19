@@ -36,7 +36,7 @@ fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR="$HOME/dotfiles_old"
-FILES=".bashrc .zshrc .bash_or_zshrc .aliases .inputrc .tmux.conf .ctags .hushlogin .alacritty.yml"
+FILES=".bashrc .zshrc .bash_or_zshrc .aliases .inputrc .tmux.conf .ctags .hushlogin .alacritty.toml"
 
 if [[ -e "$BACKUP_DIR" ]] && [[ ! -d "$BACKUP_DIR/.git" ]]; then
     echo "Backup directory $BACKUP_DIR already exists and is not a Git repository."
